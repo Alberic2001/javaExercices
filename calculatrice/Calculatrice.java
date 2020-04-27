@@ -1,5 +1,4 @@
 package calculatrice;
-import calculatrice.Base;
 import java.util.Scanner;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -25,7 +24,7 @@ public class Calculatrice {
             choix = clavier.nextInt();
             while(choix <1 || choix > 5){
                 System.out.println("Saisir votre choix : ");
-            choix = clavier.nextInt();
+                choix = clavier.nextInt();
             }
             if((choix >= 1) && (choix <5)){
                 saisie();
