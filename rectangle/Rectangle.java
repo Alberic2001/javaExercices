@@ -84,9 +84,9 @@ public class Rectangle {
             public void saisie(){
                 Scanner clavier = new Scanner(System.in);
                 System.out.print("Saisir la longueur : ");
-                this.longueur = clavier.nextInt();
+                 setLongueur(clavier.nextInt());
                 System.out.print("Saisir la largeur : ");
-                this.largeur = clavier.nextInt();
+                 setLargeur(clavier.nextInt());
         
             }
             
