@@ -1,10 +1,7 @@
 public class Rectangle extends Figure{
 	private double largeur;
-
 	public Rectangle(){
-		super();
-		this.longueur = 0;
-		this.largeur = 0;
+
 	}
 
 	public Rectangle(double longueur, double largeur){
@@ -12,7 +9,7 @@ public class Rectangle extends Figure{
 		this.largeur = largeur;
 	}
 
-	//Getters et Setters de longueur
+	//Getters et Setters de longueur et largeur
 	public double getLongueur(){
 		return this.longueur;
 	}
@@ -36,13 +33,17 @@ public class Rectangle extends Figure{
 		Figure.unite = unite;
 	}
 
+	@Override
 	public double demiPerimetre(){
 		return this.longueur + this.largeur;
 	}
 
+	@Override
 	public double surface(){
 		return this.longueur * this.largeur;
 	}
+
+	@Override
 	public double diagonale(){
 		return Math.sqrt(Math.pow(this.longueur, 2.0) + Math.pow(this.largeur, 2.0));
 	}
