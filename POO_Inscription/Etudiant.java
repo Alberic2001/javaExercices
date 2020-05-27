@@ -1,4 +1,5 @@
-﻿public class Etudiant extends Personne{
+﻿import java.time.LocalDate;
+public class Etudiant extends Personne{
 
     private String tuteur;
     private int annee;
@@ -9,14 +10,14 @@
     //Constructeur
        //Par defaut
            public Etudiant(){
-
+	super();
           }
       //Surcharge du Contructeur
          //Creer un Objet puis de l'initialiser
           public Etudiant(String nomComplet,
-               LocalDate dateNaiss,String tuteur,int annee ){
+               String dateNaiss,String tuteur,int annee ){
             //Initialisation de la personne
-              super(nomComplet,dateNaiss)
+              super(nomComplet,dateNaiss);
              this.tuteur=tuteur;
              this.annee=annee;
           }
@@ -25,7 +26,7 @@
       public String getTuteur(){
 	return this.tuteur;
       }
-      public String setTuteur(String tuteur){
+      public void setTuteur(String tuteur){
 	this.tuteur = tuteur;
       }
       public String getAnnee(){

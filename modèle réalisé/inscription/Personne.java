@@ -1,20 +1,32 @@
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.Random;
 public abstract class Personne implements IInscription{
-	protected Integer id;
+	protected int id;
 	protected String nomComplet;
 	protected LocalDate dateNaissance;
 	protected int age;
+	private int count;
 	// Constructeurs
 	public Personne(){
 		// Initialiser Id
+		this.id = assignId();
 	}
-	public Personne(String nomComplet, LocalDate dateNaissance){
+	public Personne(String nomComplet, String dateNaissance){
 		this.nomComplet = nomComplet;
-		this.dateNaissance = dateNaissance;
+		this.dateNaissance = LocalDate.parse(dateNaissance);
 		// Initialiser Id
 		this.age = calculAge();
+		 this.id = assignId();
 	}
 	// Getters et Setters
+	public int getId(){
+		return this.id;
+	}
+	public void setId(int id){
+		this.id = id;
+	}
+
 	public String getNomComplet(){
 		return this.nomComplet;
 	}
@@ -50,4 +62,9 @@ public abstract class Personne implements IInscription{
 		return age;
 	}
 
+	count = 0;
+	private int assignId(){
+		count++;
+		return count;
+	}
 }

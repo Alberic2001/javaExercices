@@ -1,16 +1,15 @@
 import java.util.ArrayList;
-
 public class Professeur extends Personne{
 	private ArrayList<String> matieres;
 
        //Par defaut
            public Professeur(){
-
+	super();
           }
       //Surcharge du Contructeur
          //Creer un Objet puis de l'initialiser
-          public Etudiant(String nomComplet,
-               LocalDate dateNaiss, ArrayList<String> matieres){
+          public Professeur(String nomComplet,
+               String dateNaiss, ArrayList<String> matieres){
             //Initialisation de la personne
               super(nomComplet,dateNaiss);
              this.matieres = matieres;

@@ -8,10 +8,10 @@ public class Etudiant extends Personne{
 	//Constructeur
 	// Par defaut
 	public Etudiant(){
-
+		super();
 	}
 	// Surcharge du constructeur
-	public Etudiant(String nomComplet, LocalDate dateNaissance, String tuteur, int annee){
+	public Etudiant(String nomComplet, String dateNaissance, String tuteur, int annee){
 		// Initialisation de la personne
 		super(nomComplet, dateNaissance);
 		this.tuteur = tuteur;
@@ -20,7 +20,18 @@ public class Etudiant extends Personne{
 	}
 
 	//Getters et Setters
-
+	public String getTuteur(){
+		return this.tuteur;
+	}
+	public void setTuteur(String tuteur){
+		this.tuteur = tuteur;
+	}
+      	public String getAnnee(){
+		return this.annee;
+  	    }
+     	 public String setAnnee(String annee){
+		this.annee = annee;
+    	  }
 	// Redefinition de la methode affiche()
 
 	@Override

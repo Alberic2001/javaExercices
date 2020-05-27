@@ -7,21 +7,31 @@ public abstract class Personne implements IInscription{
     protected  String nomComplet;
     protected  LocalDate dateNaiss;
     protected  int  age;
+    private static int count;
 
     public Personne (String nomComplet,
-               LocalDate dateNaiss){
+               String dateNaiss){
       this.nomComplet=nomComplet;
-      this.dateNaiss=dateNaiss;
+      this.dateNaiss=LocalDate.parse(dateNaiss);
      //Initialisé ID
+       this.id = assignId();
        this.age=calculAge();
 
     }
 
       public Personne (){
         //Initialisé ID
+       this.id = assignId();
     }
 
    //Getters and Setters
+	public int getId(){
+		return this.id;
+	}
+	public void setId(int id){
+		this.id = id;
+	}
+
 	public String getNomComplet(){
 		return this.nomcomplet;
 	}
@@ -33,13 +43,13 @@ public abstract class Personne implements IInscription{
 		return this.dateNaiss;
 	}
 	public void setDateNaiss(String dateNaiss){
-		this.dateNaiss = dateNaiss;
+		this.dateNaiss = LocalDate.parse(dateNaiss);
 	}
 
-	public LocalDate getAge(){
+	public int getAge(){
 		return this.age;
 	}
-	public void setAge(String age){
+	public void setAge(int age){
 		this.age = age;
 	}
 
@@ -48,12 +58,18 @@ public abstract class Personne implements IInscription{
 
     @Override
     public String affiche(){
-       return "Id: "+id+" Nom et Prenom : "+nomComplet;
+       return "Id: "+id+" Nom et Prenom : "+nomComplet+" Date de naissance: "+ this.dateNaissance.toString();
     }
 
    private int calculAge(){
       LocalDate currentDate = LocalDate.now();
       return Period.between(dateNaiss, currentDate).getYears();
+   }
+
+   Personne.count = 0;
+   private static int assignId(){
+       Personne.count++;
+       return Main.count;
    }
 
 }
